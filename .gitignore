@@ -1,0 +1,6 @@
+
+node_modules
+.env
+frondend/node_modules
+https://api.cloudinary.com/v1_1/
+frondend/.env
