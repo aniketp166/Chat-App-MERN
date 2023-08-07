@@ -16,6 +16,7 @@ import { HiEye, HiEyeOff } from "react-icons/hi"; // Import eye icons from react
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -112,7 +113,7 @@ const Signup = () => {
       data.append("file", pics);
       data.append("upload_preset", "");
       data.append("cloud_name", "");
-      fetch("https://api.cloudinary.com/v1_1/<cloudname>/image/upload", {
+      fetch("https://api.cloudinary.com/v1_1/<cloud-name>/image/upload", {
         method: "post",
         body: data,
       })
