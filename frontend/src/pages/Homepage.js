@@ -10,14 +10,23 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { useEffect } from "react";
+import { useHistory } from "react-router";
 import Login from "../components/authentication/Login";
 import Signup from "../components/authentication/Signup";
 
 const Homepage = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    if (user) history.push("/chats");
+  }, [history]);
+
   return (
     <Container maxW="xl" centerContent>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="center"
         p={3}
         bg="white"
